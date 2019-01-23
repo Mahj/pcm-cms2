@@ -32,13 +32,13 @@ $app-direction: ltr;
 // to match your app's branding. Ionic uses a Sass map of
 // colors so you can add, rename and remove colors as needed.
 // The "primary" color is the only required color in the map.
-
 $colors: (
   primary:    #488aff,
   secondary:  #32db64,
   danger:     #f53d3d,
   light:      #f4f4f4,
-  dark:       #222
+  dark:       rgb(201, 198, 198),
+  gray:       #666
 );
 
 
@@ -70,7 +70,8 @@ $colors: (
 // so that the above variables are used and Ionic's
 // default are overridden.
 
-@import "ionic.theme.default";
+// @import "ionic.theme.default";
+@import "ionic.theme.dark";
 
 
 // Ionicons

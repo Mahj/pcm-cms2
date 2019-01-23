@@ -1,6 +1,6 @@
 <ion-header>
 
-  <ion-navbar>
+  <ion-navbar color="danger">
     <ion-title>Create a New Post</ion-title>
   </ion-navbar>
 
@@ -24,6 +24,6 @@
 
     <hr>
 
-    <button [disabled]="!post.img || !post.content" ion-button full color="secondary" (tap)="create(user)">Save Post</button>
+    <button [disabled]="!post.img || !post.content" ion-button full color="danger" (tap)="create(user)">Save Post</button>
   </ng-container>
 </ion-content>

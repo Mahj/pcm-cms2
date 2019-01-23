@@ -1,6 +1,11 @@
 import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, Platform } from 'ionic-angular';
 import { AdMobFree, AdMobFreeInterstitialConfig } from '@ionic-native/admob-free';
+import { FcmProvider } from '../../providers/fcm/fcm';
+
+import { ToastController } from 'ionic-angular';
+import { Subject } from 'rxjs/Subject';
+import { tap } from 'rxjs/operators';
 
 @IonicPage()
 @Component({
@@ -13,7 +18,9 @@ export class HomePage {
     public navCtrl: NavController, 
     public navParams: NavParams, 
     public adMob: AdMobFree, 
-    public platform: Platform
+    public platform: Platform,
+    public fcm: FcmProvider,
+    public toastCtrl: ToastController
   ) {
   }
 
@@ -33,6 +40,19 @@ export class HomePage {
       }
 
     }
+    // Get a FCM token
+    this.fcm.getToken()
+
+    this.fcm.listenToNotifications().pipe(
+      tap(msg => {
+        const toast = this.toastCtrl.create({
+          message: msg.body,
+          duration: 3000
+        });
+        toast.present();
+      })
+    )
+    .subscribe()
 
   }
 

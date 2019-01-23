@@ -29,8 +29,13 @@ export class FcmProvider {
       token = await this.firebaseNative.getToken();
     }
 
+    if (this.platform.is("android")) {
+      token = await this.firebaseNative.getToken();
+    }
+
     if (this.platform.is("ios")) {
-      await this.firebaseNative.grantPermission();
+      token = await this.firebaseNative.getToken();
+      const perm = await this.firebaseNative.grantPermission();
     }
 
     return this.saveTokenToFirestore(token);

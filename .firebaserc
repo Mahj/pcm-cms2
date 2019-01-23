@@ -1,5 +1,6 @@
 {
   "projects": {
-    "default": "firebasics-f9f42"
+    "default": "porscheclubmonacoproject",
+    "staging": "porscheclubmonacoproject"
   }
 }

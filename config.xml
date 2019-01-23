@@ -1,5 +1,5 @@
 <?xml version='1.0' encoding='utf-8'?>
-<widget id="com.angularfirebase.firestarter" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+<widget id="com.creativemobilesolutions.porscheclubmonaco" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>Ionic Firestarter</name>
     <description>Ionic Firebase Starter App</description>
     <author email="hello@angularfirebase.com" href="https://angularfirebase.com">Jeff Delaney</author>
@@ -97,6 +97,6 @@
     <allow-navigation href="http://192.168.0.14:8101" />
     <allow-navigation href="http://169.254.36.255:8100" />
     <plugin name="lycwed-cordova-plugin-admob-free" spec="https://github.com/RenaudROHLINGER/lycwed-cordova-plugin-admob-free" />
-    <engine name="ios" spec="^4.5.4" />
-    <engine name="android" spec="^7.0.0" />
+    <engine name="android" spec="7.0.0" />
+    <engine name="ios" spec="4.5.4" />
 </widget>

@@ -11,7 +11,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const functions = require("firebase-functions");
 const admin = require("firebase-admin");
 exports.newUnicornPost = functions.firestore
-    .document('posts/{postId}')
+    .document("posts/{postId}")
     .onCreate((event) => __awaiter(this, void 0, void 0, function* () {
     const post = event.data.data();
     const isUnicorn = post.content.toLowerCase().indexOf("unicorn") >= 0;
@@ -21,9 +21,9 @@ exports.newUnicornPost = functions.firestore
     // Notification content
     const payload = {
         notification: {
-            title: 'New Post about Unicorns',
+            title: "New Post about Unicorns",
             body: `Read the latest unicorn post!`,
-            icon: 'https://goo.gl/Fz9nrQ'
+            icon: "https://goo.gl/Fz9nrQ"
         }
     };
     return admin.messaging().sendToTopic("unicorns", payload);
